@@ -1,0 +1,17 @@
+# Render Blueprint for the ClipPro shared backend.
+# Apply it from the Render dashboard (see RENDER-DEPLOY.md) or with the
+# Render CLI:  render blueprint launch
+# PORT is set automatically by Render — do not set it here.
+# BIND_HOST=0.0.0.0 lets Render's proxy reach the server (the server
+# defaults to 127.0.0.1, which only works on one machine).
+
+services:
+  - type: web
+    name: clippro-shared
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /clippro-shared
+    envVars:
+      - key: BIND_HOST
+        value: 0.0.0.0

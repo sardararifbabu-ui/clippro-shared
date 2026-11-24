@@ -1,0 +1,9 @@
+# Never ship live user data, logs, compiled classes, or the tunnel binary
+# to Render. The Dockerfile compiles from src/ itself.
+data/
+classes/
+*.log
+cloudflared
+*.apk
+*.apk.idsig
+.git

@@ -1,0 +1,7 @@
+# Live user data and logs stay on the machine that runs the server.
+data/
+classes/
+*.log
+cloudflared
+*.apk
+*.apk.idsig
